@@ -277,7 +277,40 @@
       border-radius: var(--radius);
       background: rgba(255,255,255,.04);
       box-shadow: var(--shadow);
-    }
+    }.moments-grid{
+  padding:18px;
+  display:grid;
+  gap:14px;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+@media (max-width: 800px){
+  .moments-grid{
+    grid-template-columns: 1fr;
+  }
+}
+
+.moment-card{
+  position:relative;
+  border-radius:18px;
+  overflow:hidden;
+  border:1px solid var(--line);
+  box-shadow: var(--shadow);
+  background: rgba(0,0,0,.25);
+}
+
+.moment-card img{
+  width:100%;
+  height:260px;
+  object-fit:cover;
+  display:block;
+  transition: transform .35s ease;
+}
+
+.moment-card:hover img{
+  transform: scale(1.06);
+}
+
   </style>
 </head>
 
@@ -374,15 +407,24 @@
         </div>
         <small>✨</small>
       </div>
-      <div style="padding:18px; display:grid; gap:12px; grid-template-columns: repeat(3, 1fr);">
-        <div class="stat" style="min-height:110px;"><b>Moment #1</b><span>Replace with a photo/card</span></div>
-        <div class="stat" style="min-height:110px;"><b>Moment #2</b><span>Replace with a photo/card</span></div>
-        <div class="stat" style="min-height:110px;"><b>Moment #3</b><span>Replace with a photo/card</span></div>
-      </div>
+      <div class="moments-grid">
+  <div class="moment-card">
+    <img src="moment1.jpg" alt="Moment 1">
+  </div>
+
+  <div class="moment-card">
+    <img src="moment2.jpg" alt="Moment 2">
+  </div>
+
+  <div class="moment-card">
+    <img src="moment3.jpg" alt="Moment 3">
+  </div>
+</div>
+
     </section>
 
     <div class="footer">
-      Made with love. Tip: change the phrases → refresh → watch the “fans” parade again 🏟️💛
+      Made with love.🏟️💛
     </div>
   </div>
 
@@ -391,20 +433,20 @@
     const GIRLFRIEND_NAME = "Her Name";
 
     const LOVE_LINES = [
-      "Your smile is my favorite view",
-      "You make life feel lighter",
-      "You’re my calm in the chaos",
-      "Your laugh is my soundtrack",
+      "Your smile is my favorite",
+      "I love your jokes",
+      "I love your kindness",
+      "you are authentic",
       "You inspire me to be better",
       "You’re beautiful inside & out",
       "You believe in me",
-      "You’re my best teammate",
-      "You’re my home"
+      "You’re creative",
+      "You’re home"
     ];
 
     // Update name + label
-    document.getElementById("gfNameTop").textContent = GIRLFRIEND_NAME;
-    document.getElementById("gfNameHero").textContent = GIRLFRIEND_NAME;
+    document.getElementById("gfNameTop").textContent = "Honey Bunchez";
+    document.getElementById("gfNameHero").textContent = "Honey Bunchez";
     document.getElementById("countLabel").textContent = `${LOVE_LINES.length} signs`;
 
     function escapeXML(str){
